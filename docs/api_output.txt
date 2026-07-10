@@ -1,0 +1,26 @@
+﻿.\.venv\Scripts\python.exe : Traceback (most recent call last):
+At C:\R_Temp\ps-script-575483fa-e9b8-42bf-8f6c-00d6cc18982d.ps1:110 char:87
++ ... ionEngine"; .\.venv\Scripts\python.exe scripts\verify_api.py 2>&1 | O ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Ashwini Wadekar\OneDrive\Desktop\UnifiedClassificationEngine\scripts\verify_api.py", line 11, in 
+<module>
+    from fastapi.testclient import TestClient  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashwini 
+Wadekar\OneDrive\Desktop\UnifiedClassificationEngine\.venv\Lib\site-packages\fastapi\testclient.py", line 1, in 
+<module>
+    from starlette.testclient import TestClient as TestClient  # noqa
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashwini 
+Wadekar\OneDrive\Desktop\UnifiedClassificationEngine\.venv\Lib\site-packages\starlette\testclient.py", line 41, in 
+<module>
+    raise RuntimeError(
+    ...<3 lines>...
+    ) from None
+RuntimeError: The starlette.testclient module requires the httpx2 package to be installed.
+You can install this with:
+    $ pip install httpx2
+

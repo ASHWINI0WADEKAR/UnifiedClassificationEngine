@@ -1,0 +1,43 @@
+﻿Unified Classification Engine ù Demo
+Sample directory: C:\Users\Ashwini Wadekar\OneDrive\Desktop\UnifiedClassificationEngine\examples
+
+================================================================
+  TEXT CLASSIFICATION
+================================================================
+  Prediction:      general_text
+  Confidence:      0.6500
+  Explanation:     The input was classified as general_text based on its linguistic features, keywords, and detected entities (no named entities detected).
+  Model Used:      distilbert-base-uncased-finetuned-sms-spam-detection
+  Processing Time: 0.0271s
+
+================================================================
+  IMAGE CLASSIFICATION
+================================================================
+  Prediction:      image
+  Confidence:      0.6800
+  Explanation:     The image was classified as image based on its visual characteristics and detected objects (no detected objects).
+  Model Used:      yolov8n
+  Processing Time: 0.0792s
+
+================================================================
+  PDF CLASSIFICATION
+================================================================
+  Prediction:      general_pdf
+  Confidence:      0.7000
+  Explanation:     The document was classified as general_pdf based on extracted text content and metadata such as pages=1.
+  Model Used:      pdf-classifier-v1
+  Processing Time: 0.2346s
+
+================================================================
+  AUDIO CLASSIFICATION
+================================================================
+  Prediction:      unknown_audio
+  Confidence:      0.5500
+  Explanation:     The audio was classified as unknown_audio using a fallback path because speech recognition did not produce a transcript.
+  Model Used:      faster-whisper-base
+  Processing Time: 0.0089s
+
+================================================================
+  Demo completed successfully.
+================================================================
+

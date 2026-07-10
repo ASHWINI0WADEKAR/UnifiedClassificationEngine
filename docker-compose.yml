@@ -1,0 +1,8 @@
+services:
+  unified-classification-engine:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      UCE_ENABLE_OPTIONAL_MODELS: "0"
+    command: uvicorn app:app --host 0.0.0.0 --port 8000
