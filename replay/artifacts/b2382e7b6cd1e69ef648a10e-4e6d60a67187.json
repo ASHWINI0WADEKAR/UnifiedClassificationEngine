@@ -1,0 +1,109 @@
+{
+  "contract_version": "1.0.0",
+  "error": null,
+  "input": {
+    "input_type": "jpg",
+    "modality": "image",
+    "sha256": "973dd09de8bfb6eb83ef572fa3efc185cb5b608cad202c52009c7cbc20b1caa0",
+    "size_bytes": 178277,
+    "source": "C:\\R_Temp\\tmpiqnzbvvm.jpg"
+  },
+  "metadata": {
+    "format": "JPEG",
+    "mode": "RGB",
+    "size": [
+      1404,
+      1600
+    ],
+    "source": "C:\\R_Temp\\tmpiqnzbvvm.jpg"
+  },
+  "modality": "image",
+  "output": {
+    "confidence": 0.68,
+    "explanation": "The image was classified as image based on its visual characteristics and detected objects (no detected objects).",
+    "prediction": "image",
+    "processing_steps": [
+      "load_image",
+      "preprocess_image",
+      "ocr_extraction",
+      "object_detection",
+      "classification"
+    ],
+    "summary": "Image from tmpiqnzbvvm.jpg classified as image; no detected objects; no text extracted.",
+    "top_features": []
+  },
+  "provenance": {
+    "classifier": "ImageClassifier",
+    "contract_version": "1.0.0",
+    "created_at": "2026-07-13T12:15:04.282265+00:00",
+    "engine": "UnifiedClassificationEngine",
+    "input_sha256": "973dd09de8bfb6eb83ef572fa3efc185cb5b608cad202c52009c7cbc20b1caa0",
+    "model_name": "yolov8n",
+    "model_version": "unknown",
+    "output_sha256": "2374c767f88af570b5ad19c32124f8b3e300af742753a13a2a16054ad8185d0e",
+    "runtime_ms": 310.774
+  },
+  "replay": null,
+  "request_id": "b2382e7b6cd1e69ef648a10e",
+  "success": true,
+  "trace": [
+    {
+      "detail": {
+        "contract_version": "1.0.0",
+        "modality": "image"
+      },
+      "duration_ms": 0.002,
+      "status": "ok",
+      "step": "request_received",
+      "timestamp": "2026-07-13T12:15:03.851628+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 69.951,
+      "status": "ok",
+      "step": "input_validated",
+      "timestamp": "2026-07-13T12:15:03.921582+00:00"
+    },
+    {
+      "detail": {
+        "sha256": "973dd09de8bfb6eb83ef572fa3efc185cb5b608cad202c52009c7cbc20b1caa0"
+      },
+      "duration_ms": 49.603,
+      "status": "ok",
+      "step": "input_hashed",
+      "timestamp": "2026-07-13T12:15:03.971183+00:00"
+    },
+    {
+      "detail": {
+        "classifier": "ImageClassifier"
+      },
+      "duration_ms": 0.046,
+      "status": "ok",
+      "step": "classifier_input_validated",
+      "timestamp": "2026-07-13T12:15:03.971225+00:00"
+    },
+    {
+      "detail": {
+        "runtime_ms": 310.774
+      },
+      "duration_ms": 310.8,
+      "status": "ok",
+      "step": "classifier_executed",
+      "timestamp": "2026-07-13T12:15:04.282029+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.187,
+      "status": "ok",
+      "step": "response_normalized",
+      "timestamp": "2026-07-13T12:15:04.282214+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.261,
+      "status": "ok",
+      "step": "output_validated",
+      "timestamp": "2026-07-13T12:15:04.282474+00:00"
+    }
+  ]
+}

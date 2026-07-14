@@ -1,9 +1,13 @@
-﻿# execution Evidence Placeholder
+﻿# Execution Evidence
 
-Capture or link evidence for execution review here.
+## Runtime Validation Evidence
 
-Recommended screenshot/file proof:
+The runtime validation flow now rejects unsupported uploads before engine dispatch and prevents replay file creation when validation fails.
 
-- CLI, API, test, or Docker terminal output as applicable.
-- Related documentation under docs/.
-- Any evaluator notes needed for final engineering review.
+## Evidence
+
+Observed from API behavior:
+
+- unsupported media type -> HTTP 415 with canonical error contract
+- corrupted content -> HTTP 400 with canonical error contract
+- successful upload -> canonical classification result and replay artifact

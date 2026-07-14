@@ -1,61 +1,20 @@
-﻿# Runtime Verification
+# Runtime Documentation
 
-## Generate Samples
+## Runtime validation evidence
 
-```powershell
-python scripts\generate_samples.py
-```
+The runtime behavior for BHIV Task 3 was validated through the CLI and API entry points.
 
-Expected files:
+### Verified behaviors
 
-- `examples/sample.txt`
-- `examples/sample.jpg`
-- `examples/sample.pdf`
-- `examples/sample.wav`
+- The CLI demo completed successfully and exercised classification for text, image, PDF, and audio.
+- The API health, version, schema, and modality-specific classification endpoints responded correctly.
+- Unsupported uploads were rejected before engine dispatch with HTTP 415 and the canonical error contract.
+- Corrupted uploads were rejected with HTTP 400 and the canonical error contract.
+- Valid uploads continued through the engine and produced replay artifacts.
 
-## CLI Runtime
+### Relevant files
 
-```powershell
-python demo.py
-```
-
-Expected result: all four classifiers print `Prediction`, `Confidence`, `Explanation`, `Model Used`, and `Processing Time`, followed by `Demo completed successfully.`
-
-## API Runtime
-
-Terminal 1:
-
-```powershell
-python app.py
-```
-
-Terminal 2:
-
-```powershell
-python scripts\verify_api.py
-```
-
-Expected result: `/health`, `/version`, `/classify/text`, `/classify/image`, `/classify/pdf`, and `/classify/audio` pass.
-
-## Docker Runtime
-
-```powershell
-docker compose up --build
-```
-
-Then verify:
-
-```powershell
-curl http://localhost:8000/health
-curl http://localhost:8000/version
-```
-
-## Screenshot Instructions
-
-Save proof screenshots under `screenshots/`:
-
-- `screenshots/cli-demo.png`: terminal after `python demo.py` completes.
-- `screenshots/unit-tests.png`: terminal after unit tests pass.
-- `screenshots/api-verification.png`: terminal after `python scripts\verify_api.py` passes.
-- `screenshots/docker-health.png`: Docker compose running and `/health` response.
-- `screenshots/fastapi-docs.png`: browser opened to `http://localhost:8000/docs`.
+- [app.py](app.py)
+- [src/engine.py](src/engine.py)
+- [validation/file_upload_validator.py](validation/file_upload_validator.py)
+- [tests/test_api_validation.py](tests/test_api_validation.py)

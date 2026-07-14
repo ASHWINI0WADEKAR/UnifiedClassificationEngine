@@ -1,9 +1,13 @@
-﻿# testing Evidence Placeholder
+﻿# Testing evidence
 
-Capture or link evidence for testing review here.
+The screenshots in this folder support the automated test evidence for the Unified Classification Engine, including successful API and CLI-based classification outputs.
 
-Recommended screenshot/file proof:
+Representative files:
 
-- CLI, API, test, or Docker terminal output as applicable.
-- Related documentation under docs/.
-- Any evaluator notes needed for final engineering review.
+- [text.png](text.png)
+- [pdf.png](pdf.png)
+- [audio.png](audio.png)
+- [backend.png](backend.png)
+- [schema.png](schema.png)
+
+These screenshots complement the test execution notes in [review_packets/testing.md](../review_packets/testing.md).

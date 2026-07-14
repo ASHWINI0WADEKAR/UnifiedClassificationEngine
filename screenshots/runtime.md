@@ -1,9 +1,14 @@
-﻿# runtime Evidence Placeholder
+﻿# Runtime evidence
 
-Capture or link evidence for runtime review here.
+The runtime evidence in this folder shows the successful execution of the classification engine under the local CLI and API runtime, including the health endpoint, version endpoint, and output JSON payloads for text and file-based classifications.
 
-Recommended screenshot/file proof:
+Representative files:
 
-- CLI, API, test, or Docker terminal output as applicable.
-- Related documentation under docs/.
-- Any evaluator notes needed for final engineering review.
+- [health.png](health.png)
+- [version.png](version.png)
+- [schema.png](schema.png)
+- [textjson.png](textjson.png)
+- [imagejson.png](imagejson.png)
+- [pdfjson.png](pdfjson.png)
+
+This supports the runtime evidence documented in [review_packets/runtime.md](../review_packets/runtime.md).

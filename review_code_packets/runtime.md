@@ -1,9 +1,11 @@
-﻿# runtime Evidence Placeholder
+﻿# Runtime Evidence
 
-Capture or link evidence for runtime review here.
+## Runtime Behavior Verified
 
-Recommended screenshot/file proof:
+- Upload validation executes before any classifier dispatch.
+- Invalid uploads return canonical error payloads and do not create replay artifacts.
+- Valid uploads continue to complete classification and produce a replay artifact.
 
-- CLI, API, test, or Docker terminal output as applicable.
-- Related documentation under docs/.
-- Any evaluator notes needed for final engineering review.
+## Evidence
+
+Verified through the new API tests in [tests/test_api_validation.py](tests/test_api_validation.py) and the runtime checks executed from the terminal.

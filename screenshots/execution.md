@@ -1,9 +1,14 @@
-﻿# execution Evidence Placeholder
+﻿# Execution evidence
 
-Capture or link evidence for execution review here.
+The execution evidence in this folder captures the live runtime behavior of the Unified Classification Engine, including the CLI demo output, API health/version/schema responses, and modality-specific classification results.
 
-Recommended screenshot/file proof:
+Representative files:
 
-- CLI, API, test, or Docker terminal output as applicable.
-- Related documentation under docs/.
-- Any evaluator notes needed for final engineering review.
+- [backend.png](backend.png)
+- [health.png](health.png)
+- [text.png](text.png)
+- [pdf.png](pdf.png)
+- [audio.png](audio.png)
+- [version.png](version.png)
+
+This evidence complements the execution notes in [review_packets/execution.md](../review_packets/execution.md).

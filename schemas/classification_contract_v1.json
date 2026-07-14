@@ -1,0 +1,308 @@
+{
+  "$defs": {
+    "ClassificationOutput": {
+      "description": "Normalized prediction payload shared by all classifiers.",
+      "properties": {
+        "confidence": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "explanation": {
+          "title": "Explanation",
+          "type": "string"
+        },
+        "prediction": {
+          "title": "Prediction",
+          "type": "string"
+        },
+        "processing_steps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Processing Steps",
+          "type": "array"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "top_features": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Top Features",
+          "type": "array"
+        }
+      },
+      "required": [
+        "prediction",
+        "confidence",
+        "explanation",
+        "summary"
+      ],
+      "title": "ClassificationOutput",
+      "type": "object"
+    },
+    "ErrorDetail": {
+      "description": "Production error contract.",
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "detail": {
+          "additionalProperties": true,
+          "title": "Detail",
+          "type": "object"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "recoverable": {
+          "default": true,
+          "title": "Recoverable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "ErrorDetail",
+      "type": "object"
+    },
+    "InputReference": {
+      "description": "Normalized input metadata without storing raw payload bytes.",
+      "properties": {
+        "input_type": {
+          "title": "Input Type",
+          "type": "string"
+        },
+        "modality": {
+          "title": "Modality",
+          "type": "string"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        },
+        "size_bytes": {
+          "minimum": 0,
+          "title": "Size Bytes",
+          "type": "integer"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        }
+      },
+      "required": [
+        "modality",
+        "input_type",
+        "size_bytes",
+        "sha256"
+      ],
+      "title": "InputReference",
+      "type": "object"
+    },
+    "ProvenanceMetadata": {
+      "description": "Model and runtime provenance for reproducibility.",
+      "properties": {
+        "classifier": {
+          "title": "Classifier",
+          "type": "string"
+        },
+        "contract_version": {
+          "default": "1.0.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "engine": {
+          "default": "UnifiedClassificationEngine",
+          "title": "Engine",
+          "type": "string"
+        },
+        "input_sha256": {
+          "title": "Input Sha256",
+          "type": "string"
+        },
+        "model_name": {
+          "title": "Model Name",
+          "type": "string"
+        },
+        "model_version": {
+          "default": "unknown",
+          "title": "Model Version",
+          "type": "string"
+        },
+        "output_sha256": {
+          "title": "Output Sha256",
+          "type": "string"
+        },
+        "runtime_ms": {
+          "minimum": 0.0,
+          "title": "Runtime Ms",
+          "type": "number"
+        }
+      },
+      "required": [
+        "model_name",
+        "created_at",
+        "input_sha256",
+        "output_sha256",
+        "runtime_ms",
+        "classifier"
+      ],
+      "title": "ProvenanceMetadata",
+      "type": "object"
+    },
+    "ReplayArtifact": {
+      "description": "Replay artifact pointer and integrity hash.",
+      "properties": {
+        "artifact_id": {
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "path",
+        "sha256"
+      ],
+      "title": "ReplayArtifact",
+      "type": "object"
+    },
+    "TraceEvent": {
+      "description": "Single execution trace event.",
+      "properties": {
+        "detail": {
+          "additionalProperties": true,
+          "title": "Detail",
+          "type": "object"
+        },
+        "duration_ms": {
+          "default": 0.0,
+          "minimum": 0.0,
+          "title": "Duration Ms",
+          "type": "number"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        },
+        "step": {
+          "title": "Step",
+          "type": "string"
+        },
+        "timestamp": {
+          "title": "Timestamp",
+          "type": "string"
+        }
+      },
+      "required": [
+        "step",
+        "status",
+        "timestamp"
+      ],
+      "title": "TraceEvent",
+      "type": "object"
+    }
+  },
+  "description": "Canonical classification contract v1.0.0.",
+  "properties": {
+    "contract_version": {
+      "default": "1.0.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ErrorDetail"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "input": {
+      "$ref": "#/$defs/InputReference"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "title": "Metadata",
+      "type": "object"
+    },
+    "modality": {
+      "title": "Modality",
+      "type": "string"
+    },
+    "output": {
+      "$ref": "#/$defs/ClassificationOutput"
+    },
+    "provenance": {
+      "$ref": "#/$defs/ProvenanceMetadata"
+    },
+    "replay": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReplayArtifact"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "request_id": {
+      "title": "Request Id",
+      "type": "string"
+    },
+    "success": {
+      "default": true,
+      "title": "Success",
+      "type": "boolean"
+    },
+    "trace": {
+      "items": {
+        "$ref": "#/$defs/TraceEvent"
+      },
+      "title": "Trace",
+      "type": "array"
+    }
+  },
+  "required": [
+    "request_id",
+    "modality",
+    "input",
+    "output",
+    "provenance",
+    "trace"
+  ],
+  "title": "ClassificationContract",
+  "type": "object"
+}

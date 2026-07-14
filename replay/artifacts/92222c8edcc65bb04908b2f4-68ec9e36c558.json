@@ -1,0 +1,105 @@
+{
+  "contract_version": "1.0.0",
+  "error": null,
+  "input": {
+    "input_type": "wav",
+    "modality": "audio",
+    "sha256": "643f8a8dc8bd9c19225afffad2becfec5426180b3749cb208abdf1a6c8354efc",
+    "size_bytes": 32044,
+    "source": "C:\\R_Temp\\tmp4xipkwt_.wav"
+  },
+  "metadata": {
+    "language": "unknown",
+    "source": "C:\\R_Temp\\tmp4xipkwt_.wav",
+    "transcript_length": 0
+  },
+  "modality": "audio",
+  "output": {
+    "confidence": 0.55,
+    "explanation": "The audio was classified as unknown_audio using a fallback path because speech recognition did not produce a transcript.",
+    "prediction": "unknown_audio",
+    "processing_steps": [
+      "load_audio",
+      "speech_to_text",
+      "language_detection",
+      "transcript_classification",
+      "explain_result"
+    ],
+    "summary": "Audio tmp4xipkwt_.wav classified as unknown_audio with 0 transcript words.",
+    "top_features": []
+  },
+  "provenance": {
+    "classifier": "AudioClassifier",
+    "contract_version": "1.0.0",
+    "created_at": "2026-07-12T12:11:57.014335+00:00",
+    "engine": "UnifiedClassificationEngine",
+    "input_sha256": "643f8a8dc8bd9c19225afffad2becfec5426180b3749cb208abdf1a6c8354efc",
+    "model_name": "faster-whisper-base",
+    "model_version": "unknown",
+    "output_sha256": "298c8ca89a86b9aa8756c1ffe5b1a5db815ca8b71eeaf761ad94c2a5ed7fdcf8",
+    "runtime_ms": 0.1
+  },
+  "replay": null,
+  "request_id": "92222c8edcc65bb04908b2f4",
+  "success": true,
+  "trace": [
+    {
+      "detail": {
+        "contract_version": "1.0.0",
+        "modality": "audio"
+      },
+      "duration_ms": 0.002,
+      "status": "ok",
+      "step": "request_received",
+      "timestamp": "2026-07-12T12:11:57.000037+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.483,
+      "status": "ok",
+      "step": "input_validated",
+      "timestamp": "2026-07-12T12:11:57.000037+00:00"
+    },
+    {
+      "detail": {
+        "sha256": "643f8a8dc8bd9c19225afffad2becfec5426180b3749cb208abdf1a6c8354efc"
+      },
+      "duration_ms": 13.211,
+      "status": "ok",
+      "step": "input_hashed",
+      "timestamp": "2026-07-12T12:11:57.014335+00:00"
+    },
+    {
+      "detail": {
+        "classifier": "AudioClassifier"
+      },
+      "duration_ms": 0.056,
+      "status": "ok",
+      "step": "classifier_input_validated",
+      "timestamp": "2026-07-12T12:11:57.014335+00:00"
+    },
+    {
+      "detail": {
+        "runtime_ms": 0.1
+      },
+      "duration_ms": 0.123,
+      "status": "ok",
+      "step": "classifier_executed",
+      "timestamp": "2026-07-12T12:11:57.014335+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.04,
+      "status": "ok",
+      "step": "response_normalized",
+      "timestamp": "2026-07-12T12:11:57.014335+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.244,
+      "status": "ok",
+      "step": "output_validated",
+      "timestamp": "2026-07-12T12:11:57.014335+00:00"
+    }
+  ]
+}

@@ -81,13 +81,13 @@ class ImageClassifier(BaseClassifier):
         try:
             from PIL import Image
 
-            image = Image.open(path)
-            return {
-                "source": path,
-                "format": image.format,
-                "size": image.size,
-                "mode": image.mode,
-            }
+            with Image.open(path) as image:
+                return {
+                    "source": path,
+                    "format": image.format,
+                    "size": image.size,
+                    "mode": image.mode,
+                }
         except Exception:
             return {"source": path}
 
@@ -149,5 +149,6 @@ class ImageClassifier(BaseClassifier):
         if extracted_text:
             return f"The image was classified as {label} because OCR detected text and the scene contained {object_summary}."
         return f"The image was classified as {label} based on its visual characteristics and detected objects ({object_summary})."
+
 
 

@@ -15,23 +15,33 @@ from app import app  # noqa: E402
 EXAMPLES = ROOT / "examples"
 client = TestClient(app)
 
-REQUIRED_FIELDS = {
+REQUIRED_CONTRACT_FIELDS = {
     "success",
+    "contract_version",
+    "request_id",
     "modality",
-    "prediction",
-    "confidence",
-    "explanation",
-    "model_used",
-    "processing_time",
+    "input",
+    "output",
+    "provenance",
+    "trace",
+    "replay",
     "metadata",
+    "error",
 }
+LEGACY_FIELDS = {"prediction", "confidence", "explanation", "model_used", "processing_time"}
 
 
 def _valid_classification(response, modality: str) -> bool:
     if response.status_code != 200:
         return False
     payload = response.json()
-    return REQUIRED_FIELDS.issubset(payload.keys()) and payload.get("modality") == modality
+    return (
+        REQUIRED_CONTRACT_FIELDS.issubset(payload.keys())
+        and LEGACY_FIELDS.issubset(payload.keys())
+        and payload.get("modality") == modality
+        and payload.get("contract_version") == "1.0.0"
+        and payload.get("output", {}).get("prediction") == payload.get("prediction")
+    )
 
 
 def main() -> int:
@@ -40,11 +50,15 @@ def main() -> int:
 
     response = client.get("/health")
     ok = response.status_code == 200 and response.json().get("status") == "ok"
-    results.append(("GET /health", ok, response.text))
+    results.append(("GET /health", ok, response.text[:300]))
 
     response = client.get("/version")
-    ok = response.status_code == 200 and "version" in response.json()
-    results.append(("GET /version", ok, response.text))
+    ok = response.status_code == 200 and response.json().get("contract_version") == "1.0.0"
+    results.append(("GET /version", ok, response.text[:300]))
+
+    response = client.get("/schema")
+    ok = response.status_code == 200 and "properties" in response.json()
+    results.append(("GET /schema", ok, response.text[:300]))
 
     response = client.post(
         "/classify/text",

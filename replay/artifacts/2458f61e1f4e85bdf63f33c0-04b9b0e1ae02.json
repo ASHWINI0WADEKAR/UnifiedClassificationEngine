@@ -1,0 +1,137 @@
+{
+  "contract_version": "1.0.0",
+  "error": null,
+  "input": {
+    "input_type": "text",
+    "modality": "text",
+    "sha256": "a22ee3c55a3423f343011a14c378388ba0e1b4d301594feeba2993633c47cae5",
+    "size_bytes": 56,
+    "source": null
+  },
+  "metadata": {
+    "dependency_status": {
+      "spacy": {
+        "available": true,
+        "executable": true,
+        "module": true,
+        "package": "spacy"
+      },
+      "transformers": {
+        "available": true,
+        "executable": true,
+        "module": true,
+        "package": "transformers"
+      }
+    },
+    "entities": [],
+    "keywords": [
+      "sample",
+      "api",
+      "text",
+      "classification",
+      "request",
+      "for",
+      "verification"
+    ],
+    "language": "en",
+    "length": 56,
+    "word_count": 7
+  },
+  "modality": "text",
+  "output": {
+    "confidence": 0.65,
+    "explanation": "The input was classified as general_text based on its linguistic features, keywords, and detected entities (no named entities detected).",
+    "prediction": "general_text",
+    "processing_steps": [
+      "normalize_text",
+      "language_detection",
+      "keyword_extraction",
+      "entity_recognition",
+      "classification"
+    ],
+    "summary": "Text classified as general_text with 7 words.",
+    "top_features": [
+      "sample",
+      "api",
+      "text",
+      "classification",
+      "request",
+      "for",
+      "verification"
+    ]
+  },
+  "provenance": {
+    "classifier": "TextClassifier",
+    "contract_version": "1.0.0",
+    "created_at": "2026-07-12T12:13:56.319444+00:00",
+    "engine": "UnifiedClassificationEngine",
+    "input_sha256": "a22ee3c55a3423f343011a14c378388ba0e1b4d301594feeba2993633c47cae5",
+    "model_name": "distilbert-base-uncased-finetuned-sms-spam-detection",
+    "model_version": "unknown",
+    "output_sha256": "e88d007c3f8977b69781c42817e93ba9e623be0617dcdc11d41695e0443357e2",
+    "runtime_ms": 623.883
+  },
+  "replay": null,
+  "request_id": "2458f61e1f4e85bdf63f33c0",
+  "success": true,
+  "trace": [
+    {
+      "detail": {
+        "contract_version": "1.0.0",
+        "modality": "text"
+      },
+      "duration_ms": 0.002,
+      "status": "ok",
+      "step": "request_received",
+      "timestamp": "2026-07-12T12:13:55.695949+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.484,
+      "status": "ok",
+      "step": "input_validated",
+      "timestamp": "2026-07-12T12:13:55.695949+00:00"
+    },
+    {
+      "detail": {
+        "sha256": "a22ee3c55a3423f343011a14c378388ba0e1b4d301594feeba2993633c47cae5"
+      },
+      "duration_ms": 0.122,
+      "status": "ok",
+      "step": "input_hashed",
+      "timestamp": "2026-07-12T12:13:55.695949+00:00"
+    },
+    {
+      "detail": {
+        "classifier": "TextClassifier"
+      },
+      "duration_ms": 0.03,
+      "status": "ok",
+      "step": "classifier_input_validated",
+      "timestamp": "2026-07-12T12:13:55.695949+00:00"
+    },
+    {
+      "detail": {
+        "runtime_ms": 623.883
+      },
+      "duration_ms": 623.912,
+      "status": "ok",
+      "step": "classifier_executed",
+      "timestamp": "2026-07-12T12:13:56.319444+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.088,
+      "status": "ok",
+      "step": "response_normalized",
+      "timestamp": "2026-07-12T12:13:56.319444+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.316,
+      "status": "ok",
+      "step": "output_validated",
+      "timestamp": "2026-07-12T12:13:56.321465+00:00"
+    }
+  ]
+}

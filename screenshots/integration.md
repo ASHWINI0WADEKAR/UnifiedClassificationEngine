@@ -1,9 +1,14 @@
-﻿# integration Evidence Placeholder
+﻿# Integration evidence
 
-Capture or link evidence for integration review here.
+The screenshots in this folder demonstrate the integration between the CLI entry point, the FastAPI service, and the underlying classification engine.
 
-Recommended screenshot/file proof:
+Representative files:
 
-- CLI, API, test, or Docker terminal output as applicable.
-- Related documentation under docs/.
-- Any evaluator notes needed for final engineering review.
+- [backend.png](backend.png)
+- [health.png](health.png)
+- [schema.png](schema.png)
+- [version.png](version.png)
+- [textjson.png](textjson.png)
+- [pdfjson.png](pdfjson.png)
+
+These files support the integration review described in [review_packets/integration.md](../review_packets/integration.md).

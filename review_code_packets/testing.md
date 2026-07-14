@@ -1,9 +1,19 @@
-﻿# testing Evidence Placeholder
+﻿# Testing Evidence
 
-Capture or link evidence for testing review here.
+## Tests Added
 
-Recommended screenshot/file proof:
+Added API validation regression tests in [tests/test_api_validation.py](tests/test_api_validation.py) covering:
 
-- CLI, API, test, or Docker terminal output as applicable.
-- Related documentation under docs/.
-- Any evaluator notes needed for final engineering review.
+- wrong file type
+- missing file
+- invalid schema
+- corrupted file
+- replay artifact not generated after validation failure
+
+## Verification Command
+
+```powershell
+& ".\.venv\Scripts\python.exe" -m unittest discover -s tests -p "test_*.py"
+```
+
+Observed result: 14 tests passed.

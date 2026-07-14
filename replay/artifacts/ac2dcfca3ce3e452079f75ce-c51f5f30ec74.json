@@ -1,0 +1,95 @@
+{
+  "contract_version": "1.0.0",
+  "error": null,
+  "input": {
+    "input_type": "str",
+    "modality": "dummy",
+    "sha256": "efaa9d1b2193174ba24d21a8594b9f7a3fac82944b6327067cc1003b6d101e0b",
+    "size_bytes": 8,
+    "source": null
+  },
+  "metadata": {},
+  "modality": "dummy",
+  "output": {
+    "confidence": 0.99,
+    "explanation": "tested",
+    "prediction": "dummy",
+    "processing_steps": [],
+    "summary": "tested",
+    "top_features": []
+  },
+  "provenance": {
+    "classifier": "DummyClassifier",
+    "contract_version": "1.0.0",
+    "created_at": "2026-07-14T11:47:19.294272+00:00",
+    "engine": "UnifiedClassificationEngine",
+    "input_sha256": "efaa9d1b2193174ba24d21a8594b9f7a3fac82944b6327067cc1003b6d101e0b",
+    "model_name": "dummy-model",
+    "model_version": "unknown",
+    "output_sha256": "9d0b10065c248fab50665965a2d82ded43c640b15e9c91e30e7ef9f59ea5c208",
+    "runtime_ms": 0.013
+  },
+  "replay": null,
+  "request_id": "ac2dcfca3ce3e452079f75ce",
+  "success": true,
+  "trace": [
+    {
+      "detail": {
+        "contract_version": "1.0.0",
+        "modality": "dummy"
+      },
+      "duration_ms": 0.002,
+      "status": "ok",
+      "step": "request_received",
+      "timestamp": "2026-07-14T11:47:19.293423+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.411,
+      "status": "ok",
+      "step": "input_validated",
+      "timestamp": "2026-07-14T11:47:19.293834+00:00"
+    },
+    {
+      "detail": {
+        "sha256": "efaa9d1b2193174ba24d21a8594b9f7a3fac82944b6327067cc1003b6d101e0b"
+      },
+      "duration_ms": 0.309,
+      "status": "ok",
+      "step": "input_hashed",
+      "timestamp": "2026-07-14T11:47:19.294143+00:00"
+    },
+    {
+      "detail": {
+        "classifier": "DummyClassifier"
+      },
+      "duration_ms": 0.042,
+      "status": "ok",
+      "step": "classifier_input_validated",
+      "timestamp": "2026-07-14T11:47:19.294182+00:00"
+    },
+    {
+      "detail": {
+        "runtime_ms": 0.013
+      },
+      "duration_ms": 0.031,
+      "status": "ok",
+      "step": "classifier_executed",
+      "timestamp": "2026-07-14T11:47:19.294213+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.031,
+      "status": "ok",
+      "step": "response_normalized",
+      "timestamp": "2026-07-14T11:47:19.294244+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.166,
+      "status": "ok",
+      "step": "output_validated",
+      "timestamp": "2026-07-14T11:47:19.294411+00:00"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "contract_version": "1.0.0",
+  "error": null,
+  "input": {
+    "input_type": "pdf",
+    "modality": "pdf",
+    "sha256": "7fdb5ad7e062ac2eb51e77f4cc61310c9d8f73e7c5065ac454bd3a3086ef6f43",
+    "size_bytes": 572,
+    "source": "C:\\Users\\Ashwini Wadekar\\OneDrive\\Desktop\\UnifiedClassificationEngine\\examples\\sample.pdf"
+  },
+  "metadata": {
+    "author": "Unified Classification Engine",
+    "creator": null,
+    "pages": 1,
+    "source": "C:\\Users\\Ashwini Wadekar\\OneDrive\\Desktop\\UnifiedClassificationEngine\\examples\\sample.pdf",
+    "title": "Unified Classification Engine Sample"
+  },
+  "modality": "pdf",
+  "output": {
+    "confidence": 0.62,
+    "explanation": "The document was classified as scanned_pdf using OCR-assisted analysis because direct text extraction was unavailable.",
+    "prediction": "scanned_pdf",
+    "processing_steps": [
+      "extract_metadata",
+      "extract_text",
+      "ocr_scan_if_needed",
+      "classify_content",
+      "explain_result"
+    ],
+    "summary": "PDF sample.pdf classified as scanned_pdf with 0 extracted words.",
+    "top_features": []
+  },
+  "provenance": {
+    "classifier": "PDFClassifier",
+    "contract_version": "1.0.0",
+    "created_at": "2026-07-12T12:11:52.428211+00:00",
+    "engine": "UnifiedClassificationEngine",
+    "input_sha256": "7fdb5ad7e062ac2eb51e77f4cc61310c9d8f73e7c5065ac454bd3a3086ef6f43",
+    "model_name": "pdf-classifier-v1",
+    "model_version": "unknown",
+    "output_sha256": "356d0557f751cdab2982e51d8ec8e7e667c69d7cdd4379f6a327859f03bd156e",
+    "runtime_ms": 297.512
+  },
+  "replay": null,
+  "request_id": "27b07ca139df9eed5368f054",
+  "success": true,
+  "trace": [
+    {
+      "detail": {
+        "contract_version": "1.0.0",
+        "modality": "pdf"
+      },
+      "duration_ms": 0.005,
+      "status": "ok",
+      "step": "request_received",
+      "timestamp": "2026-07-12T12:11:52.127523+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.526,
+      "status": "ok",
+      "step": "input_validated",
+      "timestamp": "2026-07-12T12:11:52.129285+00:00"
+    },
+    {
+      "detail": {
+        "sha256": "7fdb5ad7e062ac2eb51e77f4cc61310c9d8f73e7c5065ac454bd3a3086ef6f43"
+      },
+      "duration_ms": 1.364,
+      "status": "ok",
+      "step": "input_hashed",
+      "timestamp": "2026-07-12T12:11:52.129285+00:00"
+    },
+    {
+      "detail": {
+        "classifier": "PDFClassifier"
+      },
+      "duration_ms": 0.043,
+      "status": "ok",
+      "step": "classifier_input_validated",
+      "timestamp": "2026-07-12T12:11:52.129285+00:00"
+    },
+    {
+      "detail": {
+        "runtime_ms": 297.512
+      },
+      "duration_ms": 297.539,
+      "status": "ok",
+      "step": "classifier_executed",
+      "timestamp": "2026-07-12T12:11:52.428211+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.068,
+      "status": "ok",
+      "step": "response_normalized",
+      "timestamp": "2026-07-12T12:11:52.428211+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.439,
+      "status": "ok",
+      "step": "output_validated",
+      "timestamp": "2026-07-12T12:11:52.428211+00:00"
+    }
+  ]
+}

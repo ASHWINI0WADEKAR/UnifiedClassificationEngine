@@ -1,0 +1,116 @@
+{
+  "contract_version": "1.0.0",
+  "error": null,
+  "input": {
+    "input_type": "pdf",
+    "modality": "pdf",
+    "sha256": "8038eba466e511560f5fdda89d6777b7107bd049ef517f251591160de4dabb09",
+    "size_bytes": 148375,
+    "source": "C:\\R_Temp\\tmp5o3chj1u.pdf"
+  },
+  "metadata": {
+    "author": null,
+    "creator": null,
+    "pages": 3,
+    "source": "C:\\R_Temp\\tmp5o3chj1u.pdf",
+    "title": "bhai mai mumbai mai rehta hua , and mujhe mumbai ke colleges ke list dikho and 2nd and 3rd year ki fees bhi baato and subject bhi 2nd and 3rd year ke"
+  },
+  "modality": "pdf",
+  "output": {
+    "confidence": 0.7,
+    "explanation": "The document was classified as general_pdf based on extracted text content and metadata such as pages=3.",
+    "prediction": "general_pdf",
+    "processing_steps": [
+      "extract_metadata",
+      "extract_text",
+      "ocr_scan_if_needed",
+      "classify_content",
+      "explain_result"
+    ],
+    "summary": "PDF tmp5o3chj1u.pdf classified as general_pdf with 572 extracted words.",
+    "top_features": [
+      "yash",
+      "bhai",
+      "mumbai",
+      "mechanical",
+      "engineering",
+      "liye",
+      "bohot",
+      "badhiya"
+    ]
+  },
+  "provenance": {
+    "classifier": "PDFClassifier",
+    "contract_version": "1.0.0",
+    "created_at": "2026-07-13T12:42:26.073689+00:00",
+    "engine": "UnifiedClassificationEngine",
+    "input_sha256": "8038eba466e511560f5fdda89d6777b7107bd049ef517f251591160de4dabb09",
+    "model_name": "pdf-classifier-v1",
+    "model_version": "unknown",
+    "output_sha256": "c5d7dc93a0077063b8f45fdb6774b208dec3a895c1f1d8eadfd92f2c17b0635e",
+    "runtime_ms": 465.869
+  },
+  "replay": null,
+  "request_id": "06646a77b3e0a2aaf89aa640",
+  "success": true,
+  "trace": [
+    {
+      "detail": {
+        "contract_version": "1.0.0",
+        "modality": "pdf"
+      },
+      "duration_ms": 0.002,
+      "status": "ok",
+      "step": "request_received",
+      "timestamp": "2026-07-13T12:42:25.555660+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.618,
+      "status": "ok",
+      "step": "input_validated",
+      "timestamp": "2026-07-13T12:42:25.556278+00:00"
+    },
+    {
+      "detail": {
+        "sha256": "8038eba466e511560f5fdda89d6777b7107bd049ef517f251591160de4dabb09"
+      },
+      "duration_ms": 51.367,
+      "status": "ok",
+      "step": "input_hashed",
+      "timestamp": "2026-07-13T12:42:25.607643+00:00"
+    },
+    {
+      "detail": {
+        "classifier": "PDFClassifier"
+      },
+      "duration_ms": 0.041,
+      "status": "ok",
+      "step": "classifier_input_validated",
+      "timestamp": "2026-07-13T12:42:25.607680+00:00"
+    },
+    {
+      "detail": {
+        "runtime_ms": 465.869
+      },
+      "duration_ms": 465.898,
+      "status": "ok",
+      "step": "classifier_executed",
+      "timestamp": "2026-07-13T12:42:26.073584+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.073,
+      "status": "ok",
+      "step": "response_normalized",
+      "timestamp": "2026-07-13T12:42:26.073650+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.822,
+      "status": "ok",
+      "step": "output_validated",
+      "timestamp": "2026-07-13T12:42:26.074473+00:00"
+    }
+  ]
+}

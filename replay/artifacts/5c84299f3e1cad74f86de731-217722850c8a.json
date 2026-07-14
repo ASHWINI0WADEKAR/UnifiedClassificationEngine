@@ -1,0 +1,121 @@
+{
+  "contract_version": "1.0.0",
+  "error": null,
+  "input": {
+    "input_type": "text",
+    "modality": "text",
+    "sha256": "4b7af7986142752536f71d66ebf7f9ecba51c3af55f4575f2a167f87a53800d5",
+    "size_bytes": 12,
+    "source": null
+  },
+  "metadata": {
+    "dependency_status": {
+      "spacy": {
+        "available": true,
+        "executable": true,
+        "module": false,
+        "package": "spacy"
+      },
+      "transformers": {
+        "available": true,
+        "executable": true,
+        "module": false,
+        "package": "transformers"
+      }
+    },
+    "entities": [],
+    "keywords": [],
+    "language": "unknown",
+    "length": 12,
+    "word_count": 1
+  },
+  "modality": "text",
+  "output": {
+    "confidence": 0.55,
+    "explanation": "The input was classified as general_text based on its linguistic features, keywords, and detected entities (no named entities detected).",
+    "prediction": "general_text",
+    "processing_steps": [
+      "normalize_text",
+      "language_detection",
+      "keyword_extraction",
+      "entity_recognition",
+      "classification"
+    ],
+    "summary": "Text classified as general_text with 1 words.",
+    "top_features": []
+  },
+  "provenance": {
+    "classifier": "TextClassifier",
+    "contract_version": "1.0.0",
+    "created_at": "2026-07-13T11:45:20.083990+00:00",
+    "engine": "UnifiedClassificationEngine",
+    "input_sha256": "4b7af7986142752536f71d66ebf7f9ecba51c3af55f4575f2a167f87a53800d5",
+    "model_name": "distilbert-base-uncased-finetuned-sms-spam-detection",
+    "model_version": "unknown",
+    "output_sha256": "690c65b297fefb2aaa379f419c00a433fedb92488fb7ba38d8a883f77d724310",
+    "runtime_ms": 2.168
+  },
+  "replay": null,
+  "request_id": "5c84299f3e1cad74f86de731",
+  "success": true,
+  "trace": [
+    {
+      "detail": {
+        "contract_version": "1.0.0",
+        "modality": "text"
+      },
+      "duration_ms": 0.029,
+      "status": "ok",
+      "step": "request_received",
+      "timestamp": "2026-07-13T11:45:20.075497+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 3.475,
+      "status": "ok",
+      "step": "input_validated",
+      "timestamp": "2026-07-13T11:45:20.078969+00:00"
+    },
+    {
+      "detail": {
+        "sha256": "4b7af7986142752536f71d66ebf7f9ecba51c3af55f4575f2a167f87a53800d5"
+      },
+      "duration_ms": 1.715,
+      "status": "ok",
+      "step": "input_hashed",
+      "timestamp": "2026-07-13T11:45:20.080682+00:00"
+    },
+    {
+      "detail": {
+        "classifier": "TextClassifier"
+      },
+      "duration_ms": 0.096,
+      "status": "ok",
+      "step": "classifier_input_validated",
+      "timestamp": "2026-07-13T11:45:20.080774+00:00"
+    },
+    {
+      "detail": {
+        "runtime_ms": 2.168
+      },
+      "duration_ms": 2.218,
+      "status": "ok",
+      "step": "classifier_executed",
+      "timestamp": "2026-07-13T11:45:20.082995+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 0.148,
+      "status": "ok",
+      "step": "response_normalized",
+      "timestamp": "2026-07-13T11:45:20.083141+00:00"
+    },
+    {
+      "detail": {},
+      "duration_ms": 2.218,
+      "status": "ok",
+      "step": "output_validated",
+      "timestamp": "2026-07-13T11:45:20.085361+00:00"
+    }
+  ]
+}
